@@ -11,11 +11,13 @@ has @.dependencies;
 has $.source;
 
 submethod TWEAK() {
-    say "Self.depends ", self.depends;
     if self.depends ~~ Hash {
         for @phases -> $phase {
-            for self.depends{$phase}<requires> -> $req {
-                @!dependencies.push: $req but %phases-eq{$phase}
+            with self.depends{$phase}<requires> -> $phase-requires {
+                for $phase-requires -> $req {
+                    say "Required $req, $phase, %phases-eq{$phase}";
+                    @!dependencies.push: $req but %phases-eq{$phase}
+                }
             }
         }
     } elsif self.depends ~~ Array {

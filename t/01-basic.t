@@ -18,10 +18,19 @@ is $obj.dependencies[1].DependencyType, TESTDEP,
         "Dependency type test assigned correctly";
 
 $meta-path = $data-dir.add('META6-inline-python.json');
-say $meta-path;
 lives-ok { $obj = Dist::META.new(file => $meta-path) }, "another test";
 
 is $obj.dependencies.elems, 1,  "Correct number of same";
 is $obj.dependencies.first.DependencyType, RUNTIMEDEP,
+        "Dependency default type assigned correctly";
+
+$meta-path = $data-dir.add('META6-inline-perl.json');
+lives-ok { $obj = Dist::META.new(file => $meta-path) }, "another test";
+
+say $obj.dependencies;
+is $obj.dependencies.elems, 3,  "Correct number of same";
+is $obj.dependencies.first.DependencyType, RUNTIMEDEP,
+        "Dependency default type assigned correctly";
+is $obj.dependencies[2].DependencyType, TESTDEP,
         "Dependency default type assigned correctly";
 done-testing;
