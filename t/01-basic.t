@@ -10,7 +10,8 @@ my $obj;
 
 lives-ok { $obj = Dist::META.new(file => $meta-path) }, "default test";
 
-say $obj.raku;
+say $obj.dependencies;
 ok $obj.dependencies, "Gathers dependencies";
+is $obj.dependencies.elems, 2,  "Correct number of same";
 
 done-testing;
