@@ -1,9 +1,9 @@
 use META6;
 
-enum DependencyType <BUILDDEP TESTDEP RUNTIMEDEP>;
+enum DependencyType <BUILDDEP RUNTIMEDEP TESTDEP>;
 constant @phases = <build runtime test>;
 
-constant %phases-eq = Hash.new( @phases Z DependencyType::.values );
+constant %phases-eq = Hash.new( @phases Z DependencyType::.values.sort );
 
 unit class Dist::META is META6;
 
