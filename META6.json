@@ -2,17 +2,20 @@
   "auth" : "github:JJ",
   "authors" : ["JJ Merelo"],
   "depends" : [
-    "JSON::Fast"
+    "META6"
   ],
-  "description" : "",
+  "description" : "Creates a single method for accessing META6 values that might be in two places",
   "license" : "Artistic-2.0",
-  "name" : "",
+  "name" : "Dist::META",
   "perl" : "6.d",
-  "provides" : { },
-  "resources" : [ ],
-  "source-url" : "",
+  "provides" : {
+    "Dist::META": "lib/Dist/META.pm6"
+  },
+  "source-url" : "https://github.com/JJ/raku-dist-meta",
   "tags" : [
-    "modules"
+    "modules",
+    "ecosystem",
+    "META6"
   ],
     "version" : "0.0.1",
     "meta-version": 1
