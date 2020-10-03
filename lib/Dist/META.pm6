@@ -14,8 +14,7 @@ submethod TWEAK() {
     if self.depends ~~ Hash {
         for @phases -> $phase {
             with self.depends{$phase}<requires> -> $phase-requires {
-                for $phase-requires -> $req {
-                    say "Required $req, $phase, %phases-eq{$phase}";
+                for $phase-requires<> -> $req {
                     @!dependencies.push: $req but %phases-eq{$phase}
                 }
             }

@@ -1,6 +1,6 @@
 {
-  "auth" : "",
-  "authors" : [],
+  "auth" : "github:JJ",
+  "authors" : ["JJ Merelo"],
   "depends" : [
     "JSON::Fast"
   ],
