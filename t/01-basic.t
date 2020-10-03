@@ -12,6 +12,12 @@ lives-ok { $obj = Dist::META.new(file => $meta-path) }, "default test";
 
 ok $obj.dependencies, "Gathers dependencies";
 is $obj.dependencies.elems, 2,  "Correct number of same";
+for $obj.dependencies -> $d {
+    state @deps = <JSON::Tiny Test>;
+    is $d, (shift @deps), "Dependency $d is correct";
+}
+is $obj.dependencies[0], "JSON::Tiny", "Returns correct type";
+is $obj.dependencies[0], "JSON::Tiny", "Returns correct type";
 is $obj.dependencies[0].DependencyType, RUNTIMEDEP,
         "Dependency default type assigned correctly";
 is $obj.dependencies[1].DependencyType, TESTDEP,
