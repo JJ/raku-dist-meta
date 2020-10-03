@@ -4,6 +4,7 @@
   "depends" : [
     "META6"
   ],
+  "test-depends" : ["Test::META"],
   "description" : "Creates a single method for accessing META6 values that might be in two places",
   "license" : "Artistic-2.0",
   "name" : "Dist::META",
@@ -11,7 +12,7 @@
   "provides" : {
     "Dist::META": "lib/Dist/META.pm6"
   },
-  "source-url" : "https://github.com/JJ/raku-dist-meta",
+  "source-url" : "https://github.com/JJ/raku-dist-meta.git",
   "tags" : [
     "modules",
     "ecosystem",
