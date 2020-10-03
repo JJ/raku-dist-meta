@@ -49,17 +49,22 @@ You can run this program
 ```raku
 use Dist::META;
 my $obj = Dist::META.new(file => $meta-path); # Use path to above file
-say $obj.dependencies[0].DependencyType; # Returns RUNTIMEDEP
+say $obj.dependencies[0]; # Prints JSON::Tiny
+say $obj.dependencies[0].DependencyType; # RUNTIMEDEP
 say $obj.dependencies[1].DependencyType; # TESTDEP;
 ```
 
 `.dependencies` is an array with all dependencies, "tagged" (using mix-ins
-) with `RUNTIMEDEP`,`BUILDDEP` or `TESTDEP`, depending on where they have been 
+) with `RUNTIMEDEP`,`BUILDDEP` or `TESTDEP`, depending on where they have
+ been defined (independently of the META6.json key they have used).
 
 ## See also
 
-<-- Related stuff -->
-
+[Test::META](https://github.com/jonathanstowe/Test-META/) tests that
+ specifications are correct. [`Pakku::Spec`](https://github.com/hythm7/Pakku
+ -Spec), part of the Pakku package manager, also contains a parser for
+ `META6.json that is closer to the current spec.
+ 
 ## License
-<-- 
-This module will be licensed, by default, under the Artistic 2.0 License (the same as Raku itself). You can change it by using a different LICENSE file, as well as changing the license field in META6.json -->
+ 
+This module will be licensed under the Artistic 2.0 License.
