@@ -16,6 +16,9 @@
   "tags" : [
     "modules",
     "ecosystem",
+    "devel",
+    "meta",
+    "utils",
     "META6"
   ],
     "version" : "0.0.2",
