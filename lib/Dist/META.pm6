@@ -20,16 +20,17 @@ submethod TWEAK() {
             }
         }
     } elsif self.depends ~~ Array {
-        for self.depends -> $req {
+        for self.depends<> -> $req {
             @!dependencies.push: $req but RUNTIMEDEP;
         }
     }
-    for self.build-depends -> $req {
+    for self.build-depends<> -> $req {
         @!dependencies.push: $req but BUILDDEP;
     }
-    for self.test-depends -> $req {
+    for self.test-depends<> -> $req {
         @!dependencies.push: $req but TESTDEP;
     }
+    say @!dependencies.raku;
 
 }
 

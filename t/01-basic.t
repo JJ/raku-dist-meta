@@ -14,6 +14,7 @@ ok $obj.dependencies, "Gathers dependencies for META6.json";
 is $obj.dependencies.elems, 2,  "Correct number of dependencies in META6.json";
 for $obj.dependencies -> $d {
     state @deps = <JSON::Tiny Test>;
+    isa-ok $d, Str, "Dependency is a Str";
     is $d, (shift @deps), "Dependency $d is correct";
 }
 is $obj.dependencies[0].DependencyType, RUNTIMEDEP,
