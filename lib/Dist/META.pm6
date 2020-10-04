@@ -7,7 +7,7 @@ constant %phases-eq = Hash.new( @phases Z DependencyType::.values.sort );
 
 unit class Dist::META is META6;
 
-has @.dependencies;
+has @.dependencies = [];
 has $.source;
 
 submethod TWEAK() {
@@ -30,8 +30,6 @@ submethod TWEAK() {
     for self.test-depends<> -> $req {
         @!dependencies.push: $req but TESTDEP;
     }
-    say @!dependencies.raku;
-
 }
 
 method phases-eq { %phases-eq }
