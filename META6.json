@@ -1,5 +1,5 @@
 {
-  "auth" : "github:JJ",
+  "auth" : "zef:jjmerelo",
   "authors" : ["JJ Merelo"],
   "depends" : [
     "META6:ver<0.0.24+>"
@@ -21,6 +21,6 @@
     "utils",
     "META6"
   ],
-    "version" : "0.0.3",
+    "version" : "0.0.4",
     "meta-version": 1
 }
