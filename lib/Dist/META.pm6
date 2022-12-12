@@ -10,7 +10,6 @@ constant %phases-eq = Hash.new( @phases Z DependencyType::.values.sort );
 unit class Dist::META is META6;
 
 has Dependency @.dependencies = [];
-has $.source;
 
 submethod TWEAK() {
     if self.depends ~~ Hash {
