@@ -62,7 +62,7 @@ say $obj.dependencies[1].DependencyType; # TESTDEP;
 
 [Test::META](https://github.com/jonathanstowe/Test-META/) tests that
  specifications are correct. [`Pakku::Spec`](https://github.com/hythm7/Pakku-Spec), part of the Pakku package manager, also contains a parser for
- `META6.json` that is closer to the current spec.
+ `META6.json that is closer to the current spec.
  
 ## License
  

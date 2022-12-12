@@ -12,3 +12,5 @@ workspace.xml
 *.iml
 
 .idea
+
+.racoco
