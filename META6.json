@@ -2,7 +2,7 @@
   "auth" : "github:JJ",
   "authors" : ["JJ Merelo"],
   "depends" : [
-    "META6"
+    "META6:ver<0.0.24+>"
   ],
   "test-depends" : ["Test::META"],
   "description" : "Creates a single method for accessing META6 values that might be in two places",
@@ -16,8 +16,11 @@
   "tags" : [
     "modules",
     "ecosystem",
+    "devel",
+    "meta",
+    "utils",
     "META6"
   ],
-    "version" : "0.0.1",
+    "version" : "0.0.3",
     "meta-version": 1
 }

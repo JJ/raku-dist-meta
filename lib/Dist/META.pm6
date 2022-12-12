@@ -1,5 +1,7 @@
 use META6;
 
+subset Dependency where Str | Hash;
+
 enum DependencyType <BUILDDEP RUNTIMEDEP TESTDEP>;
 constant @phases = <build runtime test>;
 
@@ -7,7 +9,7 @@ constant %phases-eq = Hash.new( @phases Z DependencyType::.values.sort );
 
 unit class Dist::META is META6;
 
-has @.dependencies;
+has Dependency @.dependencies = [];
 has $.source;
 
 submethod TWEAK() {
@@ -20,17 +22,16 @@ submethod TWEAK() {
             }
         }
     } elsif self.depends ~~ Array {
-        for self.depends -> $req {
+        for self.depends<> -> $req {
             @!dependencies.push: $req but RUNTIMEDEP;
         }
     }
-    for self.build-depends -> $req {
+    for self.build-depends<> -> $req {
         @!dependencies.push: $req but BUILDDEP;
     }
-    for self.test-depends -> $req {
+    for self.test-depends<> -> $req {
         @!dependencies.push: $req but TESTDEP;
     }
-
 }
 
 method phases-eq is export { %phases-eq }
