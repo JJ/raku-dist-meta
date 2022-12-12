@@ -1,4 +1,4 @@
-# Dist::META
+# Dist::META [![Test-install distro](https://github.com/JJ/raku-dist-meta/actions/workflows/test.yaml/badge.svg)](https://github.com/JJ/raku-dist-meta/actions/workflows/test.yaml)
 
 The main intention of this module is to offer an uniform API for data that
  might be spread over different keys in the
