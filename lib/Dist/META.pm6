@@ -33,4 +33,4 @@ submethod TWEAK() {
 
 }
 
-method phases-eq { %phases-eq }
+method phases-eq is export { %phases-eq }

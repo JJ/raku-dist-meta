@@ -35,4 +35,12 @@ is $obj.dependencies.first.DependencyType, BUILDDEP,
         "Dependency default type assigned correctly";
 is $obj.dependencies[2].DependencyType, RUNTIMEDEP,
         "Dependency default type assigned correctly";
+
+my %phases = $obj.phases-eq();
+
+for ( "build" => BUILDDEP, "runtime" => RUNTIMEDEP, "test" => TESTDEP ) ->
+$t-pair {
+    is %phases{$t-pair.key}, $t-pair.value, "$t-pair OK";
+}
+
 done-testing;
